@@ -1,0 +1,23 @@
+:root {
+    --bg-color-main: #F8F8F8;
+    --bg-color-alt: white;
+
+    --text-color-main: #9E9E9E;
+    --text-color-alt: black;
+    --text-color-special: #4E9FEB;
+
+    --font-title: 'Montserrat', sans-serif;
+    --font-standard: 'Source Code Pro', monospace;
+}
+
+body {
+    background-color: var(--bg-color-main);
+    font-family: var(--font-standard);
+    color: var(--text-color-main);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

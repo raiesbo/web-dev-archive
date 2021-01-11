@@ -1,0 +1,127 @@
+.projects-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.projects-main {
+    max-width: 900px;
+    margin: 100px auto 0 auto;
+
+}
+
+.projects-main .title {
+    font-family: var(--font-title);
+    color: var(--text-color-special);
+    font-size: 3em;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+}
+
+.projects-main .title-description {
+    font-weight: 400;
+    font-size: 0.9em;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.projects-collection {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-container {
+    background-color: var(--bg-color-alt);
+    width: 900px;
+    margin: 30px 0 0 0;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 0.9em;
+    transition: ease 300ms;
+}
+
+.project-container:hover {
+    box-shadow: 0 0 30px #e4e4e4;
+}
+
+.project-container:hover .folder {
+    color: var(--text-color-special);
+}
+
+.project-container:hover .icons {
+    color: var(--text-color-special);
+}
+
+.project-tile {
+    padding: 15px;
+    display: grid;
+    grid-template-areas:
+    "icon title icons"
+    "desc desc desc"
+    "tags tags date";
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 30px auto 100px;
+}
+
+.folder {
+    grid-area: icon;
+    color: var(--text-color-main);
+    justify-self: start;
+    transition: ease 300ms;
+}
+
+.project-title {
+    grid-area: title;
+    color: var(--text-color-alt);
+    font-family: var(--font-title);
+    margin: 0;
+    font-size: 1em;
+    justify-self: start;
+}
+
+.icons {
+    grid-area: icons;
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    color: var(--text-color-main);
+    justify-content: space-between;
+    justify-self: end;
+    transition: ease 300ms;
+}
+
+.project-description {
+    grid-area: desc;
+    margin: 5px 0 5px 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+.tags {
+    grid-area: tags;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color-special);
+    font-size: 0.7rem;
+}
+
+.tags span {
+    margin-right: 20px;
+}
+
+.project-date {
+    grid-area: date;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color-special);
+    font-size: 0.7rem;
+    justify-self: end;
+}
