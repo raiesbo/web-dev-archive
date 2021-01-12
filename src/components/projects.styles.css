@@ -66,9 +66,8 @@
     "icon title icons"
     "desc desc desc"
     "tags tags date";
-    justify-content: center;
     align-items: center;
-    grid-template-columns: 30px auto 100px;
+    grid-template-columns: 30px auto 200px;
 }
 
 .folder {
@@ -91,16 +90,19 @@
     grid-area: icons;
     display: flex;
     flex-direction: row;
-    width: 50px;
+    /* width: 50px; */
     color: var(--text-color-main);
     justify-content: space-between;
     justify-self: end;
     transition: ease 300ms;
 }
+.icons i {
+    margin-left: 15px;
+}
 
 .project-description {
     grid-area: desc;
-    margin: 5px 0 5px 0;
+    margin: 10px 0 10px 0;
     padding: 0;
     font-size: 0.9em;
 }

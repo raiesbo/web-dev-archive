@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./projects.styles.css";
-import projectsObj from "../assets/project.archive.json";
+import projectsList from "../assets/project.archive";
+import Project from "./project.component";
 
 const list = [{
     "title": "archPortfolio",
@@ -13,14 +14,20 @@ const list = [{
     "date": "2020-04-01"
 }]
 
+
+
+
 const Projects = () => {
-    const [projects, setProjects] = useState([...list, ...list, ...list, ...list, ...list, ...list, ...list, ...list])
+    const [projects, setProjects] = useState([...projectsList])
 
     // useEffect(() => {
-    //     for (let i of projectsObj) {
-    //         setProjects.push(i)
-    //     };
+    //     for (let item of projectsList) {
+    //         console.log(item)
+    //         setProjects(projects.push(item))
+    //     }
     // }), [];
+
+    console.log("state", projects)
 
     return (
         <div className="projects-container">
@@ -33,29 +40,7 @@ const Projects = () => {
                 </header>
 
                 <div className="projects-collection">
-                    
-                    {projects.map((project) => {
-                        return (
-                            <div className="project-container">
-                                <div className="project-tile">
-                                    <i class="far fa-folder folder fa-lg"></i>
-                                    <h3 className="project-title">{ project.title }</h3>
-                                    <p className="project-description">{ project.description }</p>
-                                    <p className="tags">{ project.tags.map(item => <span className="tag">{ item }</span>) }</p>
-                                    <p className="project-date">{ project.date }</p>
-                                    <div className="icons">
-                                        {Object.keys(project.links).map(link => {
-                                            return(
-                                                <a href={project.links[link]}>{link == "website" ? <i class="fas fa-external-link-alt fa-lg"></i> : <i class="fab fa-github fa-lg"></i>}</a>
-                                            )
-                                        })}
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        )
-                    })}
-
+                    <Project projects={projects.reverse()}/>
                 </div>
 
 

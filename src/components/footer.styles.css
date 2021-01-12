@@ -28,6 +28,7 @@
 
 .footer-main .icons i {
     color: var(--text-color-main);
+    margin: 0;
 }
 
 .footer-main .icons i:hover {
