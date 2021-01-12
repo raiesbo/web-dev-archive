@@ -29,6 +29,32 @@
 }
 
 
+.filter-container {
+    background-color: var(--bg-color-alt);
+    border-radius: 8px;
+    width: 900px;
+    margin: 20px auto auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease 300ms;
+}
+
+.filter-container input {
+    font-family: var(--font-main);
+    margin: 10px;
+    border: 0;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.filter-container:hover {
+    box-shadow: 0 0 30px #e4e4e4;
+}
+
+
+
 .projects-collection {
     max-width: 900px;
     margin: auto;

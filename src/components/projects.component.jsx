@@ -18,7 +18,8 @@ const list = [{
 
 
 const Projects = () => {
-    const [projects, setProjects] = useState([...projectsList])
+    const [ projects, setProjects ] = useState([...projectsList])
+    const [ input, setInput ] = useState("")
 
     // useEffect(() => {
     //     for (let item of projectsList) {
@@ -27,7 +28,9 @@ const Projects = () => {
     //     }
     // }), [];
 
-    console.log("state", projects)
+    const handleInput = (event) => {
+        setInput(event.target.value)
+    }
 
     return (
         <div className="projects-container">
@@ -38,9 +41,11 @@ const Projects = () => {
                     <h1 className="title">Archive:</h1>
                     <h4 className="title-description">Collection of all the built projects untill now:</h4>
                 </header>
-
+                <div className="filter-container">
+                    <input value={ input } onChange={handleInput} placeholder="Filter projects here..."></input>
+                </div>
                 <div className="projects-collection">
-                    <Project projects={projects.reverse()}/>
+                    <Project projects={projects.reverse().filter(i => i.title.toLowerCase().includes(input))}/>
                 </div>
 
 

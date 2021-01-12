@@ -2,7 +2,7 @@ const projectsList = [
     {
         "title": "archPortfolio",
         "description": "Website dedicated to store my Architectutel projects and serve as an Online Portfolio. It is my first web project, acomplished in 2020 and hosted in firebase.",
-        "tags": ["HTML", "CSS", "JS(ES6+)", "Node", "Express", "MongoDB"],
+        "tags": ["HTML", "CSS", "JS(ES6+)"],
         "links": {
             "github": "https://github.com/raiesbo/archPortfolio",
             "website": "https://archportfolio.raimonespasa.com/"
@@ -24,7 +24,7 @@ const projectsList = [
         "description": "List of all the finished and on going projects untill the current date. The list is organiced by date so the top projects are the most current ones. Next improvements to look form: Connectin to a database.",
         "tags": ["React", "HTML", "CSS"],
         "links": {
-            "github": "https://github.com/raiesbo/octocatProfile_v2",
+            "github": "https://github.com/raiesbo/archive",
             "website": "https://archive.raimonespasa.com/"
         },
         "date": "2020"
@@ -50,7 +50,7 @@ const projectsList = [
     {
         "title": "architecture Icons",
         "description": "Compilation of information related to reknown architectes that achived success in their carrears. The website wants to be a place to visit to anybody in case they need to find specific details about certain arquitects.",
-        "tags": ["HTML", "CSS", "JS(ES6+)"],
+        "tags": ["HTML", "CSS", "JS(ES6+)", "Node", "Express", "MongoDB"],
         "links": {
             
         },
