@@ -32,10 +32,11 @@ const Projects = ({ modeHandler }) => {
     const handleTags = (event) => {
         event.preventDefault();
         if ([...filterTags].includes(event.target.value)) {
-            let newArr = [...filterTags]
-            let i = newArr.indexOf(event.target.value)
-            delete newArr[i]
-            setFilterTags(newArr)
+            // let newArr = [...filterTags]
+            // let i = newArr.indexOf(event.target.value)
+            // delete newArr[i]
+            // setFilterTags(newArr)
+            setFilterTags([])
         } else {
             setFilterTags([...filterTags, event.target.value])
         }
@@ -78,7 +79,7 @@ const Projects = ({ modeHandler }) => {
                 
                     {
                         projects.filter(i => i.title.toLowerCase().includes(input))
-                            .filter(e => filterTags !== [] ? filterTags.every(tag => e.tags.includes( tag )) : e)
+                            .filter(e => filterTags ? filterTags.every(tag => e.tags.includes( tag )) : e)
                             .reverse()
                             .map(project => (
                                 <Project key={project.id} {...project} />
