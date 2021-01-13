@@ -8,7 +8,7 @@
 
 .navbar-container:hover {
     background-color: var(--bg-color-alt);
-    box-shadow: 0 5px 20px #eeeeee;
+    box-shadow: 0 5px 20px var(--shadow-color);
     height: 70px;
 }
 

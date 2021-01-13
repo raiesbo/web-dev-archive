@@ -15,12 +15,12 @@ const projectsList = [
         "tags": ["React", "GitHub-Api", "HTML", "CSS"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile",
-            "website": "https://archportfolio.raimonespasa.com/"
+            "website": "https://octocatprofile.raimonespasa.com/"
         },
         "date": "2020"
     },
     {
-        "title": "Archive",
+        "title": "archive",
         "description": "List of all the finished and on going projects untill the current date. The list is organiced by date so the top projects are the most current ones. Next improvements to look form: Connectin to a database.",
         "tags": ["React", "HTML", "CSS"],
         "links": {

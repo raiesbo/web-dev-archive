@@ -2,22 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./projects.styles.css";
 import projectsList from "../assets/project.archive";
 import Project from "./project.component";
-
-const list = [{
-    "title": "archPortfolio",
-    "description": "Website dedicated to store my Architectutel projects and serve as an Online Portfolio. It is my first web project, acomplished in 2020 and hosted in firebase.",
-    "tags": ["HTML", "CSS", "JS(ES6+)"],
-    "links": {
-        "github": "https://github.com/raiesbo/archPortfolio",
-        "website": "https://archportfolio.raimonespasa.com/"
-    },
-    "date": "2020-04-01"
-}]
+// import Fade from 'react-reveal/Fade';
 
 
-
-
-const Projects = () => {
+const Projects = ({ modeHandler }) => {
     const [ projects, setProjects ] = useState([...projectsList])
     const [ input, setInput ] = useState("")
 
@@ -38,19 +26,27 @@ const Projects = () => {
             <div className="projects-main">
 
                 <header className="main-header">
-                    <h1 className="title">Archive:</h1>
+                    <div className="title-box">
+                        <h1 className="title">Archive:</h1>
+                        <label className="switch">
+                            <input type="checkbox" onClick={ modeHandler }/>
+                            <span className="slider"></span>
+                        </label>
+                    </div>
                     <h4 className="title-description">Collection of all the built projects untill now:</h4>
                 </header>
                 <div className="filter-container">
                     <input value={ input } onChange={handleInput} placeholder="Filter projects here..."></input>
                 </div>
+                
                 <div className="projects-collection">
-                    <Project projects={projects.reverse().filter(i => i.title.toLowerCase().includes(input))}/>
+                
+                    {projects.filter(i => i.title.toLowerCase().includes(input)).reverse().map(project => (
+                            <Project key={project.id} {...project} />
+                    ))}
+                
                 </div>
-
-
             </div>
-
         </div>
     )
 }
