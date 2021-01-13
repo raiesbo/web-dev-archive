@@ -56,7 +56,7 @@ const Projects = ({ modeHandler }) => {
                             <span className="slider"></span>
                         </label>
                     </div>
-                    <h4 className="title-description">Collection of all the built projects untill now:</h4>
+                    <h4 className="title-description">List of all the projects that I've built or in progress:</h4>
                 </header>
 
                 <div className="filter-container">

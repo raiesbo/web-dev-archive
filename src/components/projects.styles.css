@@ -52,22 +52,23 @@
 }
 
 .filter-tag {
+    color: var(--text-color-main);
+    background-color: var(--bg-color-alt);
     border: 0;
-    color: var(--text-color-special);
+    
     display: inline-flex;
     white-space: pre;
     font-size: 0.7rem;
     padding: 3px;
     margin: 5px;
-    background-color: var(--bg-color-main);
+    /* background-color: var(--bg-color-main); */
     border-radius: 5px;
     cursor: pointer;
 }
 
 .filter-tag-selected {
-    color: var(--text-color-main);
-    background-color: var(--bg-color-alt);
-
+    color: var(--text-color-special);
+    background-color: var(--bg-color-main);
 }
 
 
