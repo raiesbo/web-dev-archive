@@ -14,7 +14,7 @@ const Footer = () => {
                     <a href="https://www.freecodecamp.org/raiesbo" target="_blank" rel="noreferrer" title="freeCodeCamp"><i className="fab fa-free-code-camp fa-lg"></i></a>
                     <a href="https://www.linkedin.com/in/raiesbo/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fab fa-linkedin-in fa-lg"></i></a>
                     <a href="https://archive.raimonespasa.com/" target="_blank" rel="noreferrer" title="Archive"><i className="fas fa-archive"></i></a>
-                    <a href="" target="_blank" rel="noreferrer" title="Curriculum Vitae"><i className="far fa-file fa-lg"></i></a>
+                    <a href="https://raimonespasa.com/" target="_blank" rel="noreferrer" title="Portfolio"><i className="far fa-file fa-lg"></i></a>
                 </div>
 
                 <h5>
