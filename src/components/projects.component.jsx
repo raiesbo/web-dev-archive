@@ -6,19 +6,41 @@ import Project from "./project.component";
 
 
 const Projects = ({ modeHandler }) => {
-    const [ projects, setProjects ] = useState([...projectsList])
-    const [ input, setInput ] = useState("")
+    const [ projects, setProjects ] = useState([...projectsList]);
+    const [ input, setInput ] = useState("");
+    const [ tags, setTags ] = useState([])
+    const [ filterTags, setFilterTags ] = useState([])
 
-    // useEffect(() => {
-    //     for (let item of projectsList) {
-    //         console.log(item)
-    //         setProjects(projects.push(item))
-    //     }
-    // }), [];
+    
+    useEffect(() => {
+        let testTAGS = []
+        for (let project of projects) {
+            for (let tag of project.tags) {
+                if (!testTAGS.includes(tag)) {
+                    testTAGS.push(tag)
+                    setTags(tags => [...tags, tag])
+                }
+            }
+        }
+    }, [projects]);
 
     const handleInput = (event) => {
+        event.preventDefault();
         setInput(event.target.value)
     }
+
+    const handleTags = (event) => {
+        event.preventDefault();
+        if ([...filterTags].includes(event.target.value)) {
+            let newArr = [...filterTags]
+            let i = newArr.indexOf(event.target.value)
+            delete newArr[i]
+            setFilterTags(newArr)
+        } else {
+            setFilterTags([...filterTags, event.target.value])
+        }
+    }
+
 
     return (
         <div className="projects-container">
@@ -35,15 +57,34 @@ const Projects = ({ modeHandler }) => {
                     </div>
                     <h4 className="title-description">Collection of all the built projects untill now:</h4>
                 </header>
+
                 <div className="filter-container">
                     <input value={ input } onChange={handleInput} placeholder="Filter projects here..."></input>
+                    <div className="filter-tags">{ tags.map((tag) => {
+                        return (
+                            <button
+                                className={ "filter-tag " + ([...filterTags].includes(tag) ? "filter-tag-selected" : null)}
+                                onClick={ handleTags }
+                                value={ tag }
+                                >
+                                { tag }
+                                </button>
+                        )
+                    } ) }
+                    </div>
                 </div>
                 
                 <div className="projects-collection">
                 
-                    {projects.filter(i => i.title.toLowerCase().includes(input)).reverse().map(project => (
-                            <Project key={project.id} {...project} />
-                    ))}
+                    {
+                        projects.filter(i => i.title.toLowerCase().includes(input))
+                            .filter(e => filterTags !== [] ? filterTags.every(tag => e.tags.includes( tag )) : e)
+                            .reverse()
+                            .map(project => (
+                                <Project key={project.id} {...project} />
+                            )
+                        )
+                    }
                 
                 </div>
             </div>
