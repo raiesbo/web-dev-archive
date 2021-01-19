@@ -21,7 +21,7 @@ const projectsList = [
     },
     {
         "title": "webDevArchive",
-        "description": "List of all the finished and on going projects untill the current date. Each project contains github links and urls if available and is organiced by date so the top projects are the most current ones. Next steps: mongodb connection.",
+        "description": "List of all the finished and on going projects untill the current date. Each project contains github/urls links if available and is organiced by date so the top projects are the most current ones. Next: mongodb connection.",
         "tags": ["React", "CSS", "Node", "Express", "MongoDB"],
         "links": {
             "github": "https://github.com/raiesbo/archive",
@@ -31,7 +31,7 @@ const projectsList = [
     },
     {
         "title": "octocat Profiler v2",
-        "description": "Improved version of the octocat Profiler. In this case, the application counts with ends points to fetch the data from the GitHub Api and serve it in a more efficient. Moreover, the new version includes new graphs and other info.",
+        "description": "Improved version of the octocat Profiler. In this case, the application counts with ends points to fetch the data from the GitHub Api and serve it in a more efficient. The new version includes new graphs and other info.",
         "tags": ["React", "D3.js", "GitHub-Api", "Node", "Express"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile_v2"

@@ -90,3 +90,10 @@ ul button:hover {
     background-color:var(--text-color-special);
     color: var(--bg-color-alt);
 }
+
+
+@media only screen and (max-width: 750px) {
+    .navbar-container {
+        background-color: var(--bg-color-alt);
+    }
+  }
