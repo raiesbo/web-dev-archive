@@ -1,14 +1,13 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 
-const Project = ({ title, description, tags, date, links }) => {
+const Project = ({ title, description, tags, date, links }, { id }) => {
 
     return (
         <Fade  bottom cascade>
         <div>
-            <div className="project-container">
+            <div className="project-container" key={ id }>
                 <div className="project-tile">
-                    {/* <Fade  bottom cascade> */}
                     <i className="far fa-folder folder fa-lg"></i>
                         <h3 className="project-title">{ title }</h3>
                         <p className="project-description">{ description }</p>
@@ -22,7 +21,6 @@ const Project = ({ title, description, tags, date, links }) => {
                         })}
                             
                         </div>
-                        {/* </Fade> */}
                     </div>
             </div>
         </div>

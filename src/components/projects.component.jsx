@@ -6,12 +6,12 @@ import Project from "./project.component";
 
 
 const Projects = ({ modeHandler }) => {
-    const [ projects, setProjects ] = useState([...projectsList]);
-    const [ input, setInput ] = useState("");
-    const [ tags, setTags ] = useState([])
-    const [ filterTags, setFilterTags ] = useState([])
+    const [projects] = useState([...projectsList]);
+    const [input, setInput] = useState("");
+    const [tags, setTags] = useState([])
+    const [filterTags, setFilterTags] = useState([])
 
-    
+
     useEffect(() => {
         let testTAGS = []
         for (let project of projects) {
@@ -32,10 +32,6 @@ const Projects = ({ modeHandler }) => {
     const handleTags = (event) => {
         event.preventDefault();
         if ([...filterTags].includes(event.target.value)) {
-            // let newArr = [...filterTags]
-            // let i = newArr.indexOf(event.target.value)
-            // delete newArr[i]
-            // setFilterTags(newArr)
             setFilterTags([])
         } else {
             setFilterTags([...filterTags, event.target.value])
@@ -44,7 +40,7 @@ const Projects = ({ modeHandler }) => {
 
 
     return (
-        <div className="projects-container">
+        <div className="projects-container" id="home">
 
             <div className="projects-main">
 
@@ -52,7 +48,7 @@ const Projects = ({ modeHandler }) => {
                     <div className="title-box">
                         <h1 className="title">Archive:</h1>
                         <label className="switch">
-                            <input type="checkbox" onClick={ modeHandler }/>
+                            <input type="checkbox" onClick={modeHandler} />
                             <span className="slider"></span>
                         </label>
                     </div>
@@ -60,33 +56,34 @@ const Projects = ({ modeHandler }) => {
                 </header>
 
                 <div className="filter-container">
-                    <input value={ input } onChange={handleInput} placeholder="Filter projects here..."></input>
-                    <div className="filter-tags">{ tags.map((tag) => {
+                    <input value={input} onChange={handleInput} placeholder="Filter projects here..."></input>
+                    <div className="filter-tags">{tags.map((tag, id) => {
                         return (
                             <button
-                                className={ "filter-tag " + ([...filterTags].includes(tag) ? "filter-tag-selected" : null)}
-                                onClick={ handleTags }
-                                value={ tag }
-                                >
-                                { tag }
-                                </button>
+                                className={"filter-tag " + ([...filterTags].includes(tag) ? "filter-tag-selected" : null)}
+                                key={id}
+                                onClick={handleTags}
+                                value={tag}
+                            >
+                                { tag}
+                            </button>
                         )
-                    } ) }
+                    })}
                     </div>
                 </div>
-                
+
                 <div className="projects-collection">
-                
+
                     {
                         projects.filter(i => i.title.toLowerCase().includes(input))
-                            .filter(e => filterTags ? filterTags.every(tag => e.tags.includes( tag )) : e)
+                            .filter(e => filterTags ? filterTags.every(tag => e.tags.includes(tag)) : e)
                             .reverse()
-                            .map(project => (
-                                <Project key={project.id} {...project} />
+                            .map((project, id) => (
+                                <Project id={id} {...project} />
                             )
-                        )
+                            )
                     }
-                
+
                 </div>
             </div>
         </div>
