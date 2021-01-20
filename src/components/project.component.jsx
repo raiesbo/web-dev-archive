@@ -11,12 +11,12 @@ const Project = ({ title, description, tags, date, links }, { id }) => {
                     <i className="far fa-folder folder fa-lg"></i>
                         <h3 className="project-title">{ title }</h3>
                         <p className="project-description">{ description }</p>
-                        <p className="tags">{ tags.map(item => <span className="tag">{ item }</span>) }</p>
+                        <p className="tags">{ tags.map((item, id) => <span className="tag" key={id}>{ item }</span>) }</p>
                         <p className="project-date">{ date }</p>
-                        <div className="icons">
-                        {Object.keys( links ).map(link => {
+                        <div className="project-icons-links">
+                        {Object.keys( links ).map((link, id) => {
                             return(
-                                <a href={links[link]}>{link === "website" ? <i className="fas fa-external-link-alt fa-lg"></i> : <i className="fab fa-github fa-lg"></i>}</a>
+                                <a href={links[link]} key={id}>{link === "website" ? <i className="fas fa-external-link-alt fa-lg"></i> : <i className="fab fa-github fa-lg"></i>}</a>
                             )
                         })}
                             

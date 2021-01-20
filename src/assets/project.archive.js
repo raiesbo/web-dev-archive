@@ -12,7 +12,7 @@ const projectsList = [
     {
         "title": "octocat Profiler",
         "description": "The project seeks to present the public github user information in a nicer looking way and provides some extra interesting stats.",
-        "tags": ["React", "CSS", "GitHub-Api", "CSS"],
+        "tags": ["React", "CSS", "GitHub-Api"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile",
             "website": "https://octocatprofile.raimonespasa.com/"
@@ -32,7 +32,7 @@ const projectsList = [
     {
         "title": "octocat Profiler v2",
         "description": "Improved version of the octocat Profiler. In this case, the application counts with ends points to fetch the data from the GitHub Api and serve it in a more efficient. The new version includes new graphs and other info.",
-        "tags": ["React", "D3.js", "GitHub-Api", "Node", "Express"],
+        "tags": ["React", "CSS", "D3.js", "GitHub-Api", "Node", "Express"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile_v2"
         },
@@ -45,7 +45,7 @@ const projectsList = [
         "links": {
             "github": "https://github.com/raiesbo/devPortfolio"
         },
-        "date": "2021 - under construction"
+        "date": "2021 - in progress"
     },
     {
         "title": "architecture Icons",
@@ -54,7 +54,7 @@ const projectsList = [
         "links": {
             
         },
-        "date": "2021 - under construction"
+        "date": "2021 - in progress"
     }
 ]
 

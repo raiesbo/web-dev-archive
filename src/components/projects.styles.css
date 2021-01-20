@@ -125,7 +125,7 @@ input::placeholder {
     color: var(--text-color-special);
 }
 
-.project-container:hover .icons {
+.project-container:hover .project-icons-links {
     color: var(--text-color-special);
 }
 
@@ -148,25 +148,26 @@ input::placeholder {
 }
 
 .project-title {
+    /* background-color: blue; */
     grid-area: title;
+    white-space: nowrap;
     color: var(--text-color-alt);
     font-family: var(--font-title);
     margin: 0;
     font-size: 1em;
 }
 
-.icons {
+.project-icons-links {
+    /* background-color: red; */
     grid-area: icons;
     display: flex;
     flex-direction: row;
     /* width: 50px; */
     color: var(--text-color-main);
     justify-content: space-between;
+    column-gap: 13px;
     justify-self: end;
     transition: ease 300ms;
-}
-.icons i {
-    margin-left: 15px;
 }
 
 .project-description {
@@ -182,10 +183,12 @@ input::placeholder {
     padding: 0;
     color: var(--text-color-special);
     font-size: 0.7rem;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .tags span {
-    margin-right: 20px;
+    margin-right: 4.5%;
 }
 
 .project-date {
