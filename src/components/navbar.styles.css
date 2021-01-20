@@ -96,4 +96,8 @@ ul button:hover {
     .navbar-container {
         background-color: var(--bg-color-alt);
     }
-  }
+
+    .navbar-main {
+        margin: 0 20px 0 20px;
+    }
+}

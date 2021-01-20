@@ -21,8 +21,8 @@ const projectsList = [
     },
     {
         "title": "webDevArchive",
-        "description": "List of all the finished and on going projects untill the current date. Each project contains github/urls links if available and is organiced by date so the top projects are the most current ones. Next: mongodb connection.",
-        "tags": ["React", "CSS", "Node", "Express", "MongoDB"],
+        "description": "List of all the finished and on going projects untill the current date. Each project contains github/urls links if available and is organiced by date so the top projects are the most current ones.",
+        "tags": ["React", "CSS"],
         "links": {
             "github": "https://github.com/raiesbo/archive",
             "website": "https://archive.raimonespasa.com/"
@@ -52,7 +52,8 @@ const projectsList = [
         "description": "Compilation of information related to reknown architectes that achived success in their carrears. The website wants to be a place to visit to anybody in case they need to find specific details about certain arquitects.",
         "tags": ["SCSS", "React", "Redux", "Node", "Express", "MongoDB"],
         "links": {
-            
+            "github": "https://github.com/raiesbo/architectureIcons",
+            "website": "https://architectureicons.com/"
         },
         "date": "2021 - in progress"
     }
