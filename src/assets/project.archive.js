@@ -41,7 +41,7 @@ const projectsList = [
     {
         "title": "devPortfolio",
         "description": "Online web portfolio where describe some professional skill, experience, background and I showcase featured projects in the software development, web application and websites context.",
-        "tags": ["SCSS", "React"],
+        "tags": ["React", "SCSS"],
         "links": {
             "github": "https://github.com/raiesbo/devPortfolio"
         },
@@ -50,7 +50,7 @@ const projectsList = [
     {
         "title": "architecture Icons",
         "description": "Compilation of information related to reknown architectes that achived success in their carrears. The website wants to be a place to visit to anybody in case they need to find specific details about certain arquitects.",
-        "tags": ["SCSS", "React", "Redux", "Node", "Express", "MongoDB"],
+        "tags": ["React", "Redux", "SCSS", "Node", "Express", "MongoDB"],
         "links": {
             "github": "https://github.com/raiesbo/architectureIcons",
             "website": "https://architectureicons.com/"

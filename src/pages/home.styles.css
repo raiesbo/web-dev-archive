@@ -23,6 +23,10 @@
     --shadow-color: #040911;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-color-main);
     font-family: var(--font-standard);

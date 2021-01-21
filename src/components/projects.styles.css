@@ -42,7 +42,7 @@
 .filter-container {
     background-color: var(--bg-color-alt);
     border-radius: 8px;
-    max-width: 900px;
+    width: 900px;
     margin: 20px auto auto auto;
     display: flex;
     align-items: stretch;
@@ -50,6 +50,13 @@
     justify-content: center;
     transition: ease 300ms;
 }
+
+@media only screen and (max-width: 900px) {
+    .filter-container {
+        width: 100%;
+    }
+  }
+
 
 .filter-tags {
     margin: 0 10px 10px 10px;
