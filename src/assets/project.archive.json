@@ -1,4 +1,4 @@
-const projectsList = [
+[
     {
         "title": "archPortfolio",
         "description": "Website dedicated to store my Architectutel projects and serve as an Online Portfolio. It is my first web project, acomplished in 2020 and hosted in firebase.",
@@ -10,12 +10,12 @@ const projectsList = [
         "date": "2020"
     },
     {
-        "title": "octocat Profiler",
+        "title": "octocat Profiler v1",
         "description": "The project seeks to present the public github user information in a nicer looking way and provides some extra interesting stats.",
         "tags": ["React", "CSS", "GitHub-Api"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile",
-            "website": "https://octocatprofile.raimonespasa.com/"
+            "website": "https://octocarprofile-v1.web.app/"
         },
         "date": "2020"
     },
@@ -34,13 +34,14 @@ const projectsList = [
         "description": "Improved version of the octocat Profiler. In this case, the application counts with ends points to fetch the data from the GitHub Api and serve it in a more efficient. The new version includes new graphs and other info.",
         "tags": ["React", "CSS", "D3.js", "GitHub-Api", "Node", "Express"],
         "links": {
-            "github": "https://github.com/raiesbo/octocatProfile_v2"
+            "github": "https://github.com/raiesbo/octocatProfile_v2",
+            "website": "https://octocatprofile.raimonespasa.com/"
         },
         "date": "2021"
     },
     {
         "title": "devPortfolio",
-        "description": "Online web portfolio where describe some professional skill, experience, background and I showcase featured projects in the software development, web application and websites context.",
+        "description": "Online web portfolio where to describe some professional skills, experience, background and showcase featured projects in the software development, web application and websites context.",
         "tags": ["React", "SCSS"],
         "links": {
             "github": "https://github.com/raiesbo/devPortfolio"
@@ -58,6 +59,3 @@ const projectsList = [
         "date": "2021 - in progress"
     }
 ]
-
-
-module.exports = projectsList;

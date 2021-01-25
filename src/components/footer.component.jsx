@@ -19,7 +19,7 @@ const Footer = () => {
 
                 <h5>
                     Built and Designed with <span className="enfas">React, react-reveal, HTML & CSS</span> by <br/>
-                    <a href="https://raimonespasa.com/" title="personal website" target="_blank" rel="noreferrer"><span className="enfas">Raimon Espasa Bou</span></a> 
+                    <a href="https://raimonespasa.com/" title="personal website" target="_blank" rel="noreferrer"><span className="enfas">raiesbo</span></a> 
                 </h5>
 
 

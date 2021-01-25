@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./projects.styles.css";
-import projectsList from "../assets/project.archive";
 import Project from "./project.component";
-// import Fade from 'react-reveal/Fade';
 
+const projectsList = require("../assets/project.archive.json");
 
-const Projects = ({ modeHandler }) => {
+export default function Projects({ modeHandler }) {
     const [projects] = useState([...projectsList]);
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([])
@@ -90,5 +89,3 @@ const Projects = ({ modeHandler }) => {
     )
 }
 
-
-export default Projects;
