@@ -5,14 +5,14 @@
         "tags": ["HTML", "CSS", "JS(ES6+)"],
         "links": {
             "github": "https://github.com/raiesbo/archPortfolio",
-            "website": "https://archportfolio.raimonespasa.com/"
+            "website": "https://archportfolio.raiesbo.com/"
         },
         "date": "2020"
     },
     {
         "title": "octocat Profiler v1",
         "description": "The project seeks to present the public github user information in a nicer looking way and provides some extra interesting stats.",
-        "tags": ["React", "CSS", "GitHub-Api"],
+        "tags": ["React", "CSS", "GitHub API"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile",
             "website": "https://octocarprofile-v1.web.app/"
@@ -25,17 +25,17 @@
         "tags": ["React", "CSS"],
         "links": {
             "github": "https://github.com/raiesbo/archive",
-            "website": "https://archive.raimonespasa.com/"
+            "website": "https://archive.raiesbo.com/"
         },
         "date": "2020"
     },
     {
         "title": "octocat Profiler v2",
         "description": "Improved version of the octocat Profiler. In this case, the application counts with ends points to fetch the data from the GitHub Api and serve it in a more efficient. The new version includes new graphs and other info.",
-        "tags": ["React", "CSS", "D3.js", "GitHub-Api", "Node", "Express"],
+        "tags": ["React", "CSS", "D3.js", "GitHub API", "Node", "Express"],
         "links": {
             "github": "https://github.com/raiesbo/octocatProfile_v2",
-            "website": "https://octocatprofile.raimonespasa.com/"
+            "website": "https://octocat.raiesbo.com/"
         },
         "date": "2021"
     },
@@ -44,18 +44,28 @@
         "description": "Online web portfolio where to describe some professional skills, experience, background and showcase featured projects in the software development, web application and websites context.",
         "tags": ["React", "SCSS"],
         "links": {
-            "github": "https://github.com/raiesbo/devPortfolio"
+            "github": "https://github.com/raiesbo/devPortfolio",
+            "website": "https://raiesbo.com/"
+        },
+        "date": "2021"
+    },
+    {
+        "title": "rebDev Blog",
+        "description": "Blog dedicated to sharing the knowledge acquired day by day in the environment of web development and software engineering in general.",
+        "tags": ["React", "SCSS", "Node", "Express", "MongoDB"],
+        "links": {
+            "github": "https://github.com/raiesbo/rebDev_blog"
         },
         "date": "2021 - in progress"
     },
     {
         "title": "architecture Icons",
-        "description": "Compilation of information related to reknown architectes that achived success in their carrears. The website wants to be a place to visit to anybody in case they need to find specific details about certain arquitects.",
+        "description": "Compilation of information related to reknown architectes that achived success in their carrears. In addition, the site will count on a quiz section where you will be able to measure your knowledge on this topic.",
         "tags": ["React", "Redux", "SCSS", "Node", "Express", "MongoDB"],
         "links": {
-            "github": "https://github.com/raiesbo/architectureIcons",
-            "website": "https://architectureicons.com/"
+            "github": "https://github.com/raiesbo/architectureIcons"
         },
         "date": "2021 - in progress"
     }
 ]
+

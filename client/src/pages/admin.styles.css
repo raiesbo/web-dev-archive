@@ -1,0 +1,15 @@
+.admin-main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-container {
+    margin: auto 20px auto 20px;
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: center;
+}

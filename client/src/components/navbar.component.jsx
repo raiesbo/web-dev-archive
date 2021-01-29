@@ -6,7 +6,7 @@ const Navbar = () => {
     return(
         <div className="navbar-container">
             <div className="navbar-main">
-                <a href="https://raimonespasa.com/" title="personal website" target="_blank" rel="noreferrer"><div className="logo">
+                <a href="https://raiesbo.com/" title="personal website" target="_blank" rel="noreferrer"><div className="logo">
                     <p>REB</p>
                 </div></a>
                 <nav>
