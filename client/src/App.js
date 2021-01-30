@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 
 import Home from "./pages/home.page";
@@ -11,6 +11,29 @@ import {
 
 
 function App() {
+
+  ////////////////////////////
+  //DARK MODE//LOCAL STORAGE//
+  ////////////////////////////
+
+  const [darkMode, setDarkMode] = useState(false);
+  let storedDarkMode = localStorage.getItem("darkMode");
+
+  useEffect(() => {
+    if (storedDarkMode === "true") {
+      setDarkMode(true);
+      document.getElementById("body").classList.toggle("darkmode");
+    }
+  }, [])
+
+  const darkModeHandler = () => {
+    // CLICK ON TOGGLE HANDLER
+    setDarkMode(!darkMode)
+    document.getElementById("body").classList.toggle("darkmode");
+    localStorage.setItem("darkMode", !darkMode)
+  }
+
+
   return (
     <div className="App">
 
@@ -21,7 +44,7 @@ function App() {
         </Route>
 
         <Route path="/" >
-        <Home />
+          <Home darkModeHandler={darkModeHandler} />
         </Route>
 
       </Switch>
