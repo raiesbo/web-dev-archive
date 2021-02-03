@@ -19,9 +19,9 @@ export default function Admin() {
             <div className="admin-container">
                 <Navbar />
                 <Switch>
-                    <Route to="/admin/sigup" exact>
+                    {/* <Route to="/admin/sigup" exact>
                         <SignUp />
-                    </Route>
+                    </Route> */}
                     <Route to="/admin/login" exact>
                         <Login />
                     </Route>

@@ -6,8 +6,8 @@ const { login_get, login_post, signup_get, signup_post } = require("../controler
 const router = Router();
 
 
-router.get('/admin', login_get);
-router.post('/admin', login_post);
+router.get('/login', login_get);
+router.post('/login', login_post);
 router.get('/signup', signup_get);
 router.post('/signup', signup_post);
 
