@@ -1,12 +1,19 @@
+import Cookies from 'universal-cookie';
 import { useState, useEffect } from 'react';
 import "./login.styles.css";
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 export default function SignUp() {
 
+    let history = useHistory();
+
     // handle form data
     const [formData, setFormData] = useState({});
+    const [emailError, setEmailError] = useState("");
+    const [usernameError, setUsernameError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
     const handleUsername = (e) => setFormData({ ...formData, username: e.target.value });
     const handleEmail = (e) => setFormData({ ...formData, email: e.target.value });
     const handlePassword = (e) => setFormData({ ...formData, password: e.target.value });
@@ -15,8 +22,12 @@ export default function SignUp() {
     const signupUser = async (e) => {
         e.preventDefault();
 
-        // console.log(formData)
+        // reset errors
+        setEmailError("")
+        setUsernameError("")
+        setPasswordError("")
 
+        // post data to server
         try {
             const res = await fetch("http://localhost:5000/signup", {
                 method: "POST",
@@ -24,19 +35,32 @@ export default function SignUp() {
                 headers: { "Content-Type": "application/json" }
             });
 
-            console.log("FrontEnd ", res)
+            const data = await res.json();
 
-            res.redirected && console.log("redirected to ", res.url)
-            if (res.redirected) {
-                // console.log("redirected")
-                <Redirect to={res.url} />
+            // handle errors
+            if (data.errors) {
+                setEmailError(data.errors.email)
+                setUsernameError(data.errors.unsername)
+                setPasswordError(data.errors.password)
             }
+
+            // handle signup
+            if (data.user) {
+                const cookie = new Cookies();
+                const maxAge = 3 * 24 * 60 * 60; // in Seconds
+                cookie.set('token', String(data.token), { path: '/', maxAge });
+                // console.log(cookie.get('token'));
+                console.log({user: data.user})
+                return (
+                    history.push('/')
+                )
+            }
+
         }
         catch (err) {
             console.log("ERROR: ", err)
         }
     }
-
 
 
     return (
@@ -53,9 +77,9 @@ export default function SignUp() {
             <label htmlFor="password">Password:</label>
             <input type="password" name="password" value={formData.password} onChange={handlePassword} />
 
-            <div className="username-error"></div>
-            <div className="email-error"></div>
-            <div className="password-error"></div>
+            <div className="username-error error">{usernameError}</div>
+            <div className="email-error error">{emailError}</div>
+            <div className="password-error error">{passwordError}</div>
 
             <button type="submit">Submit</button>
 

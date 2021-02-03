@@ -64,3 +64,10 @@ input:hover  label {
 .login-form button:hover {
     background-color: transparent;
 }
+
+.error {
+    max-width: 100%;
+    font-family: var(--font-title);
+    color: rgb(255, 0, 0);
+    font-size: 0.8rem;
+}
