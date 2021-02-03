@@ -39,11 +39,11 @@ function App() {
 
       <Switch>
 
-        <Route path="/admin">
+        <Route path="/admin" exact>
           <Admin />
         </Route>
 
-        <Route path="/" >
+        <Route path="/" exact>
           <Home darkModeHandler={darkModeHandler} />
         </Route>
 
