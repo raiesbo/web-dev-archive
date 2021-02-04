@@ -22,6 +22,8 @@ export default function SignUp() {
     const signupUser = async (e) => {
         e.preventDefault();
 
+        const url = "http://localhost:5000/"
+
         // reset errors
         setEmailError("")
         setUsernameError("")
@@ -29,7 +31,7 @@ export default function SignUp() {
 
         // post data to server
         try {
-            const res = await fetch("http://localhost:5000/signup", {
+            const res = await fetch(`${url}signup`, {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: { "Content-Type": "application/json" }

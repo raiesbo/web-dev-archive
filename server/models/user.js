@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please enter an email"],
         unique: true,
         lowercase: true,
-        validate:  [isEmail, "Please enter a valid email"]
+        validate: [isEmail, "Please enter a valid email"]
     },
     password: {
         type: String,
@@ -25,9 +25,22 @@ const userSchema = new mongoose.Schema({
 // mongoose hooks // function fires before doc saved // hash password
 userSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt();
-    this.password =  await bcrypt.hash(this.password, salt);
+    this.password = await bcrypt.hash(this.password, salt);
     next();
 })
+
+// static method to login user
+userSchema.statics.login = async function (username, password) {
+    const user = await this.findOne({ username });
+    if (user) {
+        const auth = await bcrypt.compare(password, user.password);
+        if (auth) {
+            return user;
+        }
+        throw Error("Incorrect password")
+    }
+    throw Error("Incorrect email")
+}
 
 
 const User = mongoose.model("User", userSchema);
