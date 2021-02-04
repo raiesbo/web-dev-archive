@@ -64,16 +64,27 @@
 }
 
 nav ul{
-    width: 100px;
+    /* width: 100px; */
     text-decoration: none;
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    /* align-items: center; */
 }
 
-ul button {
+nav ul li{
+    /* font-size: 0.9rem; */
+    font-weight: 300;
+    margin-left: 15px;
+    transition: ease 200ms;
+}
+
+nav ul li:hover {
+    color: var(--text-color-special);
+}
+
+/* ul button {
     background-color: transparent;
     height: 25px;
     width: 40px;
@@ -89,10 +100,24 @@ ul button {
 ul button:hover {
     background-color:var(--text-color-special);
     color: var(--bg-color-alt);
+} */
+
+
+.fa-arrow-circle-up {
+    position:fixed;
+    /* position: absolute; */
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    transition: ease 250ms;
+}
+
+.fa-arrow-circle-up:hover {
+    color: var(--text-color-special);
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 900px) {
     .navbar-container {
         background-color: var(--bg-color-alt);
     }

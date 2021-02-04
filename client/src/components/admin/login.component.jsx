@@ -41,6 +41,7 @@ export default function Login() {
             if (data.errors) {
                 console.log(data.errors)
                 console.log("errors: ", data.errors)
+                Object.values(data.errors).map(item => item && setLoginError(item))
                 // setLoginError(data.errors);
             }
 
@@ -50,8 +51,8 @@ export default function Login() {
                 const maxAge = 3 * 24 * 60 * 60; // in Seconds
                 cookie.set('token', String(data.token), { path: '/', maxAge });
                 // console.log(cookie.get('token'));
-                console.log({ user: data.user })
-                return history.push('/')
+                // console.log({ user: data.user })
+                return history.push('/admin/projects')
             }
         }
         catch (err) {
@@ -71,7 +72,7 @@ export default function Login() {
             <label for="password">Password</label>
             <input type="password" name="password" onChange={handlePassword} required />
 
-            <div className="login-error">{loginError}</div>
+            <div className="login-error error">{loginError}</div>
 
             <button>Submit</button>
         </form>

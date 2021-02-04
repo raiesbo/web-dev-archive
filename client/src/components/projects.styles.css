@@ -51,7 +51,7 @@
     transition: ease 300ms;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 930px) {
     .filter-container {
         width: 100%;
     }

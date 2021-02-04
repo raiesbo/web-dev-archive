@@ -53,9 +53,7 @@ export default function SignUp() {
                 cookie.set('token', String(data.token), { path: '/', maxAge });
                 // console.log(cookie.get('token'));
                 console.log({user: data.user})
-                return (
-                    history.push('/')
-                )
+                return history.push('/admin/projects')
             }
 
         }

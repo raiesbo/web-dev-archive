@@ -7,6 +7,11 @@ import Footer from "../components/footer.component";
 
 const Home = ({ darkModeHandler }) => {
 
+    const navbarItems = {
+        Home: ["https://raiesbo.com/", "portfolio"]
+        // Login: ["/admin", "login"]
+    }
+
     ////////////////////////////
     //DARK MODE//LOCAL STORAGE//
     ////////////////////////////
@@ -32,7 +37,7 @@ const Home = ({ darkModeHandler }) => {
     return (
         <div className="home-container">
 
-            <Navbar />
+            <Navbar navbarItems={navbarItems} />
             <Projects modeHandler={darkModeHandler} />
             <Footer />
 

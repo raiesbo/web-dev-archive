@@ -11,6 +11,18 @@ const handleErrors = (err) => {
     console.log(err.message, err.code)
     let errors = { username: "", email: "", password: "" }
 
+    // (login) incorrect username
+    if (err.message === "Incorrect username") {
+        errors.username = "That username is not registered";
+        return errors;
+    }
+
+    // (login) incorrect password
+    if (err.message === "Incorrect password") {
+        errors.passord = "That password is not correct";
+        return errors;
+    }
+
     // duplicated error code
     if (err.code === 11000) {
         errors.email = "That email or username is already registered";
@@ -52,6 +64,7 @@ module.exports.signup_get = (req, res) => {
 module.exports.login_post = async (req, res) => {
     const { username, password } = req.body;
 
+    // try to check if the user exists and sends new token back
     try {
         const user = await User.login(username, password);
         const token = createToken(user._id);
@@ -59,7 +72,8 @@ module.exports.login_post = async (req, res) => {
         res.status(201).json({ user: user._id, token });
     }
     catch (err) {
-        res.status(400).send(err)
+        const errors = handleErrors(err)
+        res.status(400).json({ errors })
     }
 
 }

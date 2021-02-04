@@ -39,6 +39,10 @@ function App() {
 
       <Switch>
 
+        <Route path="/admin/:action" >
+          <Admin />
+        </Route>
+
         <Route path="/admin" exact>
           <Admin />
         </Route>
