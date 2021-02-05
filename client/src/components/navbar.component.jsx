@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./navbar.styles.css";
 
 
-const Navbar = ({ navbarItems }) => {
+const Navbar = ({ navbarItems, username, logedIn }) => {
 
     //////////////////
     // SCROLL ARROW //
@@ -29,13 +29,8 @@ const Navbar = ({ navbarItems }) => {
                 </div></a>
                 <nav>
                     <ul>
-                        {Object.keys(navbarItems).map((item, i) => {
-                            return (
-                                <li key={i}>
-                                    <a href={navbarItems[item][0]} title={navbarItems[item][1]}>{item}</a>
-                                </li>
-                            )
-                        })}
+                        {username && <li>{`Hi ${username}! 👋` }</li>}
+                        {navbarItems().map((item, i) => item)}
                         {/* <li><button>CV</button></li> */}
                     </ul>
                 </nav>

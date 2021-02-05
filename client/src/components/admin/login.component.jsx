@@ -50,8 +50,9 @@ export default function Login() {
                 const cookie = new Cookies();
                 const maxAge = 3 * 24 * 60 * 60; // in Seconds
                 cookie.set('token', String(data.token), { path: '/', maxAge });
+                cookie.set('name', formData.username, { path: '/', maxAge });
                 // console.log(cookie.get('token'));
-                // console.log({ user: data.user })
+                console.log({ user: data.user })
                 return history.push('/admin/projects')
             }
         }

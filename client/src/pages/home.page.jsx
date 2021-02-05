@@ -7,31 +7,14 @@ import Footer from "../components/footer.component";
 
 const Home = ({ darkModeHandler }) => {
 
-    const navbarItems = {
-        Home: ["https://raiesbo.com/", "portfolio"]
-        // Login: ["/admin", "login"]
+
+    const navbarItems = () => {
+        return (
+            [
+                <li><a href="https://raiesbo.com/" title="Portfolio Website">Home</a></li>
+            ]
+        )
     }
-
-    ////////////////////////////
-    //DARK MODE//LOCAL STORAGE//
-    ////////////////////////////
-
-    // const [darkMode, setDarkMode ] = useState(false);
-    // let storedDarkMode = localStorage.getItem("darkMode");
-
-    // useEffect(() => {
-    //     if (storedDarkMode === "true") {
-    //         setDarkMode(true);
-    //         document.getElementById("body").classList.toggle("darkmode");
-    //     }
-    // }, [])
-
-    // const darkModeHandler = () => {
-    //     // CLICK ON TOGGLE HANDLER
-    //     setDarkMode(!darkMode)
-    //     document.getElementById("body").classList.toggle("darkmode");
-    //     localStorage.setItem("darkMode", !darkMode)
-    // }
 
 
     return (

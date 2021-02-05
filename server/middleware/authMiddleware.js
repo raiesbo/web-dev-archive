@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const requestAuth = (req, res, next) => {
+const requireAuth = (req, res, next) => {
     const token = req.cookies.jwt;
 
     //check json web token exists and is verified;
@@ -19,4 +19,27 @@ const requestAuth = (req, res, next) => {
     }
 }
 
-module.exports = { requestAuth };
+// check current user
+const checkUser = (req, res, next) => {
+    const token = req.cookies.jwt;
+
+    if (token) {
+        jwt.token(token, process.env.SIGNATURE, async (err, decodedToken) => {
+            if (err) {
+                console.log(err.message);
+                res.locals.user = null;
+                res.redirect("/login");
+            } else {
+                console.log(decodedToken);
+                let user = await User.findById(decodedToken.id);
+                res.locals.user = user;
+                next();
+            }
+        })
+    } else {
+        res.locals.user = null;
+        res.redirect("/login");
+    }
+};
+
+module.exports = { requireAuth, checkUser };
