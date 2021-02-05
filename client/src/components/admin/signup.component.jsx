@@ -4,7 +4,7 @@ import "./login.styles.css";
 import { useHistory } from 'react-router-dom';
 
 
-export default function SignUp() {
+export default function SignUp({ url }) {
 
     let history = useHistory();
 
@@ -21,8 +21,6 @@ export default function SignUp() {
 
     const signupUser = async (e) => {
         e.preventDefault();
-
-        const url = "http://localhost:5000/"
 
         // reset errors
         setEmailError("")
@@ -70,13 +68,13 @@ export default function SignUp() {
             <div className="login-title">Sign Up</div>
 
             <label htmlFor="username">Username:</label>
-            <input type="text" name="username" value={formData.username} onChange={handleUsername} />
+            <input type="text" name="username" value={formData.username} onChange={handleUsername} autocomplete='off' />
 
             <label htmlFor="email">Email:</label>
-            <input type="email" name="email" value={formData.email} onChange={handleEmail} />
+            <input type="email" name="email" value={formData.email} onChange={handleEmail} autocomplete='off' />
 
             <label htmlFor="password">Password:</label>
-            <input type="password" name="password" value={formData.password} onChange={handlePassword} />
+            <input type="password" name="password" value={formData.password} onChange={handlePassword} autocomplete='off' />
 
             <div className="username-error error">{usernameError}</div>
             <div className="email-error error">{emailError}</div>

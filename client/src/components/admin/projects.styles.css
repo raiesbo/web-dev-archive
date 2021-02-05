@@ -1,0 +1,31 @@
+.projectsList-container {
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex: row;
+}
+
+.current-projects {
+    width: 100%;
+    
+}
+
+.projectAdmin-tile {
+    background-color: var(--bg-color-alt);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.projectAdmin-tile input {
+    padding: 6px;
+    width: 100%;
+    border-radius: 4px;
+}

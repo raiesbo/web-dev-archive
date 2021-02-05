@@ -21,6 +21,7 @@ const Navbar = ({ navbarItems, username, logedIn }) => {
     }, []);
 
 
+    
     return (
         <div className="navbar-container">
             <div className="navbar-main">

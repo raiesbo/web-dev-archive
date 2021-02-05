@@ -33,6 +33,8 @@ function App() {
     localStorage.setItem("darkMode", !darkMode)
   }
 
+  const url = "http://localhost:5000/";
+
 
   return (
     <div className="App">
@@ -40,15 +42,15 @@ function App() {
       <Switch>
 
         <Route path="/admin/:action" >
-          <Admin />
+          <Admin url={url}/>
         </Route>
 
         <Route path="/admin" exact>
-          <Admin />
+          <Admin url={url}/>
         </Route>
 
         <Route path="/" exact>
-          <Home darkModeHandler={darkModeHandler} />
+          <Home darkModeHandler={darkModeHandler} url={url}/>
         </Route>
 
       </Switch>

@@ -7,11 +7,11 @@ import Navbar from "../components/navbar.component";
 // import Footer from "../components/footer.component";
 import Cookies from 'universal-cookie';
 
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, url } from "react-router-dom";
 
 
 
-export default function Admin() {
+export default function Admin({ url }) {
 
     const [username, setUsername] = useState("");
     const [logedIn, setLogedIn] = useState(false);
@@ -22,7 +22,7 @@ export default function Admin() {
 
     console.log(0, cookie.get("jwt"))
 
-    useEffect( async () => {
+    useEffect(async () => {
         if (cookie.get("token")) {
             setLogedIn(true)
             setUsername(cookie.get("name"))
@@ -33,14 +33,13 @@ export default function Admin() {
     })
 
 
-
     const navbarItems = () => {
 
         if (logedIn) {
             return (
                 [
                     <li><a href="/" title="home page">Home</a></li>,
-                    <li onClick={handleLogout} className="logout link" style={{cursor: "pointer"}}>LogOut</li>
+                    <li onClick={handleLogout} className="logout link" style={{ cursor: "pointer" }}>LogOut</li>
                 ]
             )
         } else {
@@ -58,9 +57,9 @@ export default function Admin() {
         console.log("action", a)
         switch (a) {
             case "signup":
-                return <SignUp />;
+                return <SignUp url={url} />;
             default:
-                return <Login />;
+                return <Login url={url} />;
         }
     }
 
@@ -76,7 +75,7 @@ export default function Admin() {
             <div className="admin-container">
                 <Navbar navbarItems={navbarItems} username={username} />
 
-                {cookie.get('token') ? <AdminProjects /> : adminMenu(action)}
+                {cookie.get('token') ? <AdminProjects url={url} username={username}/> : adminMenu(action)}
 
                 {/* {adminMenu(action)} */}
 

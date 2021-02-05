@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import "./login.styles.css";
 
 
-export default function Login() {
+export default function Login({ url }) {
 
     let history = useHistory();
 
@@ -18,14 +18,11 @@ export default function Login() {
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        const url = "http://localhost:5000/";
-        // const url = "";
-
         // reset errors
         setLoginError("")
 
         try {
-            console.log(formData)
+            // console.log(formData)
             const res = await fetch(`${url}login`, {
                 method: "post",
                 body: JSON.stringify(formData),
@@ -52,7 +49,7 @@ export default function Login() {
                 cookie.set('token', String(data.token), { path: '/', maxAge });
                 cookie.set('name', formData.username, { path: '/', maxAge });
                 // console.log(cookie.get('token'));
-                console.log({ user: data.user })
+                // console.log({ user: data.user })
                 return history.push('/admin/projects')
             }
         }
@@ -68,10 +65,10 @@ export default function Login() {
             <div className="login-title">Log In</div>
 
             <label for="username">Username</label>
-            <input type="text" name="username" onChange={handleUsername} required />
+            <input type="text" name="username" onChange={handleUsername} autocomplete='off' required />
 
             <label for="password">Password</label>
-            <input type="password" name="password" onChange={handlePassword} required />
+            <input type="password" name="password" onChange={handlePassword} autocomplete='off' required />
 
             <div className="login-error error">{loginError}</div>
 

@@ -5,7 +5,7 @@ import Projects from "../components/projects.component";
 import Footer from "../components/footer.component";
 
 
-const Home = ({ darkModeHandler }) => {
+const Home = ({ darkModeHandler, url }) => {
 
 
     const navbarItems = () => {
