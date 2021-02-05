@@ -6,6 +6,7 @@
     max-width: 1000px;
     display: flex;
     flex: row;
+    align-items: flex-start;
 }
 
 .current-projects {
@@ -13,14 +14,17 @@
     
 }
 
-.projectAdmin-tile {
+.section-title {
+    /* width: 100%; */
     background-color: var(--bg-color-alt);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px
+}
+
+.project-tile {
+    background-color: var(--bg-color-alt);
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
@@ -28,4 +32,84 @@
     padding: 6px;
     width: 100%;
     border-radius: 4px;
+}
+
+.project-button {
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: var(--bg-color-main);
+    border: 1px solid var(--text-color-main);
+    border-radius: 4px;
+    color: var(--text-color-main);
+    padding: 3px;
+    width: 25px;
+    height: 25px;
+    transition: ease 200ms;
+}
+
+.project-button:hover {
+    background-color: var(--bg-color-alt);
+}
+
+
+
+/*////////////////////////////*/
+/*/// CREATING NEW PROJECT ///*/
+/*////////////////////////////*/
+
+.new-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-project label {
+    align-self: start;
+    font-size: 0.8rem;
+}
+
+.new-project input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--text-color-main);
+    background-color: var(--bg-color-main);
+    margin: 5px 0;
+}
+
+
+/*/////////////////////*/
+/*/// CONTROL PANEL ///*/
+/*/////////////////////*/
+
+.control-panel * {
+    margin: 0;
+    padding: 0;
+}
+
+
+.control-panel {
+    background-color: var(--bg-color-alt);
+    padding: 10px;
+    margin-left: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    width: 11rem;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-panel button {
+    background-color: var(--bg-color-main);
+    width: 100%;
+    margin-top: 15px;
+    transition: ease 200ms;
+}
+
+.control-panel button:hover {
+    background-color: var(--bg-color-alt);
 }
