@@ -2,19 +2,28 @@ const mongoose = require("mongoose");
 
 const projectSchema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        default: ""
     },
     description: {
-        type: String
+        type: String,
+        default: ""
     },
     tags: {
-        type: Array
+        type: Array,
+        default: []
     },
     links: {
-        type: Object
+        type: Object,
+        default: {}
     },
-    year: {
-        type: String
+    date: {
+        type: String,
+        default: ""
+    },
+    author: {
+        type: String,
+        default: ""
     }
 })
 

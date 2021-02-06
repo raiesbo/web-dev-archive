@@ -28,19 +28,23 @@ module.exports.admin_get = async (req, res) => {
 }
 
 module.exports.admin_post = async (req, res) => {
-    const { action, id } = req.body;
+    const { action } = req.body;
 
     switch (action) {
         case "delete":
-            const { id } = req.body;
-            const deletedProject = await Project.findByIdAndRemove(id, { useFindAndModify: false });
+            const deleteId = req.body.id;
+            const deletedProject = await Project.findByIdAndRemove(deleteId, { useFindAndModify: false });
             return res.status(200).send("the project has been deleted");
         case "update":
-            const { updates } = req.body;
-            const updatedProject = Project.findByIdAndUpdate({ _id: id, updates }, { useFindAndModify: false });
+            const { updates, id } = req.body;
+            const updatedProject = await Project.findByIdAndUpdate(id, updates, { useFindAndModify: false });
+            console.log(updatedProject)
             return res.status(200).json(updatedProject);
         case "create":
-            return res.status(200).send("you are creating")
+            const { project } = req.body;
+            const newProject = await Project.create({ ...project })
+            console.log(newProject)
+            return res.status(200).send(newProject)
         default:
             return res.status(400).send("no valid action assigned")
     }

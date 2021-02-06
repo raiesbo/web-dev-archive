@@ -76,6 +76,28 @@
     border: 1px solid var(--text-color-main);
     background-color: var(--bg-color-main);
     margin: 5px 0;
+    color: var(--text-color-alt);
+}
+
+.new-project button {
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: var(--bg-color-main);
+    border: 1px solid var(--text-color-main);
+    border-radius: 4px;
+    color: var(--text-color-main);
+    padding: 3px;
+    height: 25px;
+    transition: ease 200ms;
+    margin-right: 5px;
+}
+
+.new-project .btn-icon {
+    width: 25px;
+}
+
+.new-project button:hover {
+    background-color: var(--bg-color-alt);
 }
 
 
