@@ -79,8 +79,7 @@ export default function Projects({ modeHandler }) {
                             .reverse()
                             .map((project, id) => (
                                 <Project id={id} {...project} />
-                            )
-                            )
+                            ))
                     }
 
                 </div>

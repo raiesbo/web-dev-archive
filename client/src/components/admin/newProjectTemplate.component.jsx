@@ -3,7 +3,7 @@
 
 
 
-export default function NewProjectTemplate({ setNewProject, newProject, createProject, modeHandler }) {
+export default function NewProjectTemplate({ setNewProject, newProject, createProject, displayHandler }) {
 
     const handleName = (e) => setNewProject({ ...newProject, name: e.target.value });
     const handleDescription = (e) => setNewProject({ ...newProject, description: e.target.value });
@@ -19,19 +19,19 @@ export default function NewProjectTemplate({ setNewProject, newProject, createPr
             <div className="project-tile new-project projectAdmin-tile">
                 <form onSubmit={createProject}>
                     <label htmlFor="name">Project's title:</label>
-                    <input type="text" name="name" onChange={handleName} required/>
+                    <input type="text" name="name" onChange={handleName} required />
                     <label htmlFor="description">Description:</label>
-                    <input type="text" name="description" onChange={handleDescription} required/>
+                    <input type="text" name="description" onChange={handleDescription} required />
                     <label htmlFor="date">Year of developement:</label>
-                    <input type="text" name="date" onChange={handleDate} required/>
+                    <input type="text" name="date" onChange={handleDate} required />
                     <label htmlFor="githubLink">Github link:</label>
-                    <input type="text" name="githubLink" onChange={handleGithub} required/>
+                    <input type="text" name="githubLink" onChange={handleGithub} required />
                     <label htmlFor="webLink">Website link:</label>
-                    <input type="text" name="webList" onChange={handleWebsite} required/>
+                    <input type="text" name="webList" onChange={handleWebsite} required />
                     <label htmlFor="tags">Tags: (separated by ",")</label>
-                    <input type="text" name="tags" onChange={handleTags} required/>
+                    <input type="text" name="tags" onChange={handleTags} required />
                     <button>Save new Project</button>
-                    <button className="btn-icon" onClick={() => modeHandler("projectsList")}><i className="fas fa-times"></i></button>
+                    <button className="btn-icon" onClick={() => displayHandler("projectsList")}><i className="fas fa-times"></i></button>
                 </form>
             </div>
         </div>

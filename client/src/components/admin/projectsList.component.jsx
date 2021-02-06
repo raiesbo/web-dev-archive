@@ -29,7 +29,6 @@ export default function ProjectsList({ projectsList, deleteProject, updateMode }
                             <button className="project-button" onClick={() => deleteProject(project._id)}><i className="fas fa-trash-alt"></i></button>
                         </div>
 
-
                     )
                 })
             }

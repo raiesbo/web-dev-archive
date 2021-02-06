@@ -1,7 +1,6 @@
 const Project = require("../models/project");
 
 
-
 module.exports.projects_get = async (req, res) => {
 
     try {

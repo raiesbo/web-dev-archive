@@ -1,13 +1,13 @@
 
 
 
-export default function UpdateProjectTemplate({ setPatchProject, patchProject, updateProject, modeHandler }) {
+export default function UpdateProjectTemplate({ setPatchProject, patchProject, updateProject, displayHandler }) {
 
     const handleName = (e) => setPatchProject({ ...patchProject, name: e.target.value });
     const handleDescription = (e) => setPatchProject({ ...patchProject, description: e.target.value });
     const handleDate = (e) => setPatchProject({ ...patchProject, date: e.target.value });
-    const handleGithub = (e) => setPatchProject({ ...patchProject, links: {...patchProject.links, github: e.target.value }});
-    const handleWebsite = (e) => setPatchProject({ ...patchProject, links: {...patchProject.links, website: e.target.value }});
+    const handleGithub = (e) => setPatchProject({ ...patchProject, links: { ...patchProject.links, github: e.target.value } });
+    const handleWebsite = (e) => setPatchProject({ ...patchProject, links: { ...patchProject.links, website: e.target.value } });
     const handleTags = (e) => setPatchProject({ ...patchProject, tagsString: e.target.value });
 
     return (
@@ -30,7 +30,7 @@ export default function UpdateProjectTemplate({ setPatchProject, patchProject, u
                     <label htmlFor="tags">Tags: (separated by ",")</label>
                     <input type="text" name="tags" onChange={handleTags} value={patchProject.tagsString} required />
                     <button>Update Project</button>
-                    <button className="btn-icon" onClick={() => modeHandler("projectsList")}><i className="fas fa-times"></i></button>
+                    <button className="btn-icon" onClick={() => displayHandler("projectsList")}><i className="fas fa-times"></i></button>
                 </form>
 
             </div>

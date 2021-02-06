@@ -12,7 +12,7 @@ export default function AdminProjects({ url, username }) {
     const [projectsList, setProjectsList] = useState([]);
     const [newProject, setNewProject] = useState({});
     const [patchProject, setPatchProject] = useState({});
-    const [projectsMode, setProjectsMode] = useState("projectsList");
+    const [displayMode, setDisplayMode] = useState("projectsList");
 
     useEffect(() => {
         fetchData()
@@ -25,11 +25,22 @@ export default function AdminProjects({ url, username }) {
             .catch(e => console.log(e))
     }
 
-    const modeHandler = (mode) => {
-        mode === "projectsList" && setProjectsMode("projectsList");
-        mode === "newProject" && setProjectsMode("newProject");
-        mode === "updateProject" && setProjectsMode("updateProject");
-        // mode !== "updateProject" || "newProject" && setProjectsMode("projectsList");
+    ///////////////////
+    // display modes //
+    ///////////////////
+
+    const DISPLAY_MODES = {
+        projectsList: "projectsList",
+        newProject: "newProject",
+        updateProject: "updateProject"
+    }
+
+    const displayHandler = (newMode) => {
+        for (let mode of Object.keys(DISPLAY_MODES)) {
+            if (mode === newMode) {
+                setDisplayMode(newMode)
+            }
+        }
     }
 
     ////////////////////////
@@ -57,7 +68,7 @@ export default function AdminProjects({ url, username }) {
         catch (e) {
             console.log(e)
         }
-        modeHandler("projectsList")
+        displayHandler("projectsList")
     }
 
     ////////////////////
@@ -114,15 +125,16 @@ export default function AdminProjects({ url, username }) {
         catch (e) {
             console.log(e)
         }
-        modeHandler("projectsList")
+        displayHandler("projectsList")
     }
 
     const updateMode = (project) => {
 
         const projectToUpdate = { ...project }
-        modeHandler("updateProject");
+        displayHandler("updateProject");
 
         projectToUpdate.tagsString = "";
+
         for (let i = 0; i < projectToUpdate.tags.length; i++) {
             if (i !== projectToUpdate.tags.length - 1) {
                 projectToUpdate.tagsString = `${projectToUpdate.tagsString} ${projectToUpdate.tags[i]},`
@@ -130,10 +142,64 @@ export default function AdminProjects({ url, username }) {
                 projectToUpdate.tagsString = `${projectToUpdate.tagsString} ${projectToUpdate.tags[i]}`
             }
         }
-
         setPatchProject({ ...projectToUpdate })
     }
 
+
+    ////////////////////
+    // display switch //
+    ////////////////////
+
+    const controlDisplay = () => {
+        let display = [];
+
+        // return Array: [0] = main component, [1] = side button
+        if (displayMode === "newProject") {
+            return (
+                display = [
+                    <NewProjectTemplate
+                        setNewProject={setNewProject}
+                        newProject={newProject}
+                        createProject={createProject}
+                        displayHandler={displayHandler}
+                    />,
+                    <button
+                        className="project-button"
+                        onClick={() => displayHandler("projectsList")}
+                    >Cancel new project</button>
+                ]
+            )
+        } else if (displayMode === "updateProject") {
+            return (
+                display = [
+                    <UpdateProjectTemplate
+                        setPatchProject={setPatchProject}
+                        patchProject={patchProject}
+                        updateProject={updateProject}
+                        displayHandler={displayHandler}
+                    />,
+                    <button
+                        className="project-button"
+                        onClick={() => displayHandler("projectsList")}
+                    >Cancel update</button>
+                ]
+            )
+        } else {
+            return (
+                display = [
+                    <ProjectsList
+                        projectsList={projectsList}
+                        deleteProject={deleteProject}
+                        updateMode={updateMode}
+                    />,
+                    <button
+                        className="project-button"
+                        onClick={() => displayHandler("newProject")}
+                    >Create new project</button>
+                ]
+            )
+        }
+    }
 
 
     return (
@@ -141,18 +207,14 @@ export default function AdminProjects({ url, username }) {
 
 
             <div className="current-projects">
-                {projectsMode === "newProject" && <NewProjectTemplate setNewProject={setNewProject} newProject={newProject} createProject={createProject} modeHandler={modeHandler} />}
-                {projectsMode === "updateProject" && <UpdateProjectTemplate setPatchProject={setPatchProject} patchProject={patchProject} updateProject={updateProject} modeHandler={modeHandler} />}
-                {projectsMode === "projectsList" && <ProjectsList projectsList={projectsList} deleteProject={deleteProject} updateMode={updateMode} />}
+                {controlDisplay()[0]}
             </div>
 
             <div className="control-panel">
                 <div className="projects-num">
                     <h4 className="">N° of projects: {projectsList.length}</h4>
                 </div>
-                {projectsMode === "projectsList" && <button className="project-button" onClick={() => modeHandler("newProject")}>Create new project{/*<i class="fas fa-plus"></i>*/}</button>}
-                {projectsMode === "newProject" && <button className="project-button" onClick={() => modeHandler("projectsList")}>Cancel new project{/*<i class="fas fa-plus"></i>*/}</button>}
-                {projectsMode === "updateProject" && <button className="project-button" onClick={() => modeHandler("projectsList")}>Cancel update{/*<i class="fas fa-plus"></i>*/}</button>}
+                {controlDisplay()[1]}
             </div>
 
 
