@@ -39,8 +39,9 @@ export default function AdminProjects({ url, username }) {
     const createProject = e => {
         e.preventDefault();
 
-        // processing the data
+        // processing links // same Item
         newProject["links"] = { github: newProject.linkGithub, website: newProject.linkWebsite };
+        // processing the tags // String -> Array
         newProject.tags = newProject.tagsString.split(",").map(tag => tag.trim());
 
         try {
@@ -88,7 +89,7 @@ export default function AdminProjects({ url, username }) {
     const updateProject = (e) => {
         e.preventDefault();
 
-        // processing the data
+        // processing the tags // String -> Array
         patchProject.tags = patchProject.tagsString.split(",").map(tag => tag.trim());
 
         const updateItem = {
@@ -102,7 +103,7 @@ export default function AdminProjects({ url, username }) {
         try {
             const res = fetch(`${url}admin/`, {
                 method: "post",
-                body: JSON.stringify({ action: "update", id: patchProject._id, project: { ...updateItem, "author": username } }),
+                body: JSON.stringify({ action: "update", id: patchProject._id, updates: { ...updateItem } }),
                 headers: {
                     "Content-Type": "application/json"
                 }
