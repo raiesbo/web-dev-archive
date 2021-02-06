@@ -16,7 +16,7 @@ export default function NewProjectTemplate({ setNewProject, newProject, createPr
         <div className="current-projects">
             <h4 className="section-title">New Project:</h4>
 
-            <div className="project-tile new-project">
+            <div className="project-tile new-project projectAdmin-tile">
                 <form onSubmit={createProject}>
                     <label htmlFor="name">Project's title:</label>
                     <input type="text" name="name" onChange={handleName} required/>
@@ -31,7 +31,7 @@ export default function NewProjectTemplate({ setNewProject, newProject, createPr
                     <label htmlFor="tags">Tags: (separated by ",")</label>
                     <input type="text" name="tags" onChange={handleTags} required/>
                     <button>Save new Project</button>
-                    <button className="btn-icon" onClick={modeHandler}><i className="fas fa-times"></i></button>
+                    <button className="btn-icon" onClick={() => modeHandler("projectsList")}><i className="fas fa-times"></i></button>
                 </form>
             </div>
         </div>

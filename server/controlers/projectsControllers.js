@@ -39,7 +39,7 @@ module.exports.admin_post = async (req, res) => {
             const { updates, id } = req.body;
             const updatedProject = await Project.findByIdAndUpdate(id, updates, { useFindAndModify: false });
             console.log(updatedProject)
-            return res.status(200).json(updatedProject);
+            return res.status(200).send(updatedProject);
         case "create":
             const { project } = req.body;
             const newProject = await Project.create({ ...project })

@@ -2,9 +2,9 @@ import "./admin.styles.css";
 import { useState, useEffect } from "react";
 import Login from "../components/admin/login.component";
 import SignUp from "../components/admin/signup.component";
-import AdminProjects from "../components/admin/projects.component";
+import AdminProjects from "../components/admin/admProjects.component";
 import Navbar from "../components/navbar.component";
-// import Footer from "../components/footer.component";
+import Footer from "../components/footer.component";
 import Cookies from 'universal-cookie';
 
 import { useParams, useHistory, url } from "react-router-dom";
@@ -71,16 +71,21 @@ export default function Admin({ url }) {
 
 
     return (
-        <div className="admin-main">
-            <div className="admin-container">
-                <Navbar navbarItems={navbarItems} username={username} />
+        <>
+            <Navbar navbarItems={navbarItems} username={username} />
+            <div className="admin-main">
+                <div className="admin-container">
 
-                {cookie.get('token') ? <AdminProjects url={url} username={username}/> : adminMenu(action)}
 
-                {/* {adminMenu(action)} */}
+                    {cookie.get('token') ? <AdminProjects url={url} username={username} /> : adminMenu(action)}
 
-                {/* <Footer /> */}
+
+
+
+                </div>
+
             </div>
-        </div>
+            {/* <Footer /> */}
+        </>
     )
 }

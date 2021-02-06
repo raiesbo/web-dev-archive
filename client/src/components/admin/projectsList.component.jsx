@@ -3,7 +3,7 @@
 
 
 
-export default function ProjectsList({ projectsList, deleteProject }) {
+export default function ProjectsList({ projectsList, deleteProject, updateMode }) {
     return (
         <>
             <h4 className="section-title">List of your projects:</h4>
@@ -11,7 +11,7 @@ export default function ProjectsList({ projectsList, deleteProject }) {
                 projectsList.map((project, id) => {
                     return (
 
-                        <div className="project-tile" key={id}>
+                        <div className="projectAdmin-tile project-tile" key={id}>
                             <i className="far fa-folder folder fa-lg"></i>
                             <h3 className="project-title">{project.name}</h3>
                             <p className="project-description">{project.description}</p>
@@ -25,7 +25,7 @@ export default function ProjectsList({ projectsList, deleteProject }) {
                                 })}
 
                             </div>
-                            <button className="project-button"><i className="fas fa-pen"></i></button>
+                            <button className="project-button" onClick={() => updateMode(project)}><i className="fas fa-pen"></i></button>
                             <button className="project-button" onClick={() => deleteProject(project._id)}><i className="fas fa-trash-alt"></i></button>
                         </div>
 
