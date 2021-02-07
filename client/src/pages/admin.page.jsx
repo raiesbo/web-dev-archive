@@ -73,7 +73,7 @@ export default function Admin({ url }) {
     return (
         <>
             <Navbar navbarItems={navbarItems} username={username} />
-            <div className="admin-main">
+            <div className="admin-main" id="home">
                 <div className="admin-container">
 
 

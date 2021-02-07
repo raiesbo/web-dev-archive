@@ -6,7 +6,6 @@ import ProjectsList from "./projectsList.component";
 
 
 
-
 export default function AdminProjects({ url, username }) {
 
     const [projectsList, setProjectsList] = useState([]);
@@ -212,7 +211,7 @@ export default function AdminProjects({ url, username }) {
 
             <div className="control-panel">
                 <div className="projects-num">
-                    <h4 className="">N° of projects: {projectsList.length}</h4>
+                    <h4 className="projects-num">N° of projects: {projectsList.length}</h4>
                 </div>
                 {controlDisplay()[1]}
             </div>
