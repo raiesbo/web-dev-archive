@@ -3,10 +3,13 @@ import "./admProjects.styles.css";
 import NewProjectTemplate from "./newProjectTemplate.component";
 import UpdateProjectTemplate from "./updateProjectTemplate.component";
 import ProjectsList from "./projectsList.component";
+import Cookies from 'universal-cookie';
 
 
 
 export default function AdminProjects({ url, username }) {
+
+    const cookie = new Cookies();
 
     const [projectsList, setProjectsList] = useState([]);
     const [newProject, setNewProject] = useState({});
@@ -57,7 +60,7 @@ export default function AdminProjects({ url, username }) {
         try {
             const res = fetch(`${url}admin/`, {
                 method: "post",
-                body: JSON.stringify({ action: "create", project: { ...newProject, "author": username } }),
+                body: JSON.stringify({ action: "create", project: { ...newProject, "author": username }, token: cookie.get('token') }),
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -78,7 +81,7 @@ export default function AdminProjects({ url, username }) {
         try {
             const res = await fetch(`${url}admin/`, {
                 method: "post",
-                body: JSON.stringify({ action: "delete", id: id }),
+                body: JSON.stringify({ action: "delete", id: id, token: cookie.get('token') }),
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -113,7 +116,7 @@ export default function AdminProjects({ url, username }) {
         try {
             const res = fetch(`${url}admin/`, {
                 method: "post",
-                body: JSON.stringify({ action: "update", id: patchProject._id, updates: { ...updateItem } }),
+                body: JSON.stringify({ action: "update", id: patchProject._id, updates: { ...updateItem }, token: cookie.get('token') }),
                 headers: {
                     "Content-Type": "application/json"
                 }

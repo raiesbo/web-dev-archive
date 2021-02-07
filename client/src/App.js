@@ -33,7 +33,8 @@ function App() {
     localStorage.setItem("darkMode", !darkMode)
   }
 
-  const url = "http://localhost:5000/";
+  // const url = "http://localhost:5000/";
+  const url = "https://webdevarchive-server.herokuapp.com/";
 
 
   return (

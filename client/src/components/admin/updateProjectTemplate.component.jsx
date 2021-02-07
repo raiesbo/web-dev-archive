@@ -26,7 +26,7 @@ export default function UpdateProjectTemplate({ setPatchProject, patchProject, u
                     <label htmlFor="githubLink">Github link:</label>
                     <input type="text" name="githubLink" onChange={handleGithub} value={patchProject.links.github} required />
                     <label htmlFor="webLink">Website link:</label>
-                    <input type="text" name="webList" onChange={handleWebsite} value={patchProject.links.website} required />
+                    <input type="text" name="webList" onChange={handleWebsite} value={patchProject.links.website} />
                     <label htmlFor="tags">Tags: (separated by ",")</label>
                     <input type="text" name="tags" onChange={handleTags} value={patchProject.tagsString} required />
                     <button>Update Project</button>

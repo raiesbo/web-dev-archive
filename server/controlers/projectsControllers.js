@@ -1,5 +1,29 @@
 const Project = require("../models/project");
+const jwt = require("jsonwebtoken");
+require('dotenv').config({ path: __dirname + '../.env' })
 
+
+
+// const tokenVerification = (token) => {
+//     // token = jwt
+//     if (token) {
+//         jwt.token(token, process.env.SIGNATURE, (err, decodedToken) => {
+//             if (err) {
+//                 console.log(err.message);
+//                 return { error: err.message };
+//             } else {
+//                 return console.log(decodedToken);
+//             }
+//         })
+//     } else {
+//         return { error: "No token assigned" };
+//     }
+
+// }
+
+/////////////////
+// controllers //
+/////////////////
 
 module.exports.projects_get = async (req, res) => {
 
@@ -14,7 +38,7 @@ module.exports.projects_get = async (req, res) => {
 }
 
 module.exports.admin_get = async (req, res) => {
-    const author = req.params.author
+    const { author } = req.params
 
     try {
         const projects = await Project.find({ author });
@@ -27,7 +51,16 @@ module.exports.admin_get = async (req, res) => {
 }
 
 module.exports.admin_post = async (req, res) => {
-    const { action } = req.body;
+    const { action, token } = req.body;
+
+    // console.log(token)
+    // console.log(jwt)
+
+    // const tokenAuth = tokenVerification(token)
+
+    // if (tokenAuth.error) {
+    //     res.status(400).send(tokenAuth.error)
+    // }
 
     switch (action) {
         case "delete":
