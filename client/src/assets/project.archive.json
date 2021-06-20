@@ -52,7 +52,7 @@
     {
         "title": "rebDev Blog",
         "description": "Blog dedicated to sharing the knowledge acquired day by day in the environment of web development and software engineering in general.",
-        "tags": ["React", "SCSS", "Node", "Express", "MongoDB"],
+        "tags": ["Gatsby", "SCSS", "Markdown"],
         "links": {
             "github": "https://github.com/raiesbo/rebDev_blog"
         },
@@ -60,12 +60,32 @@
     },
     {
         "title": "architecture Icons",
-        "description": "Compilation of information related to reknown architectes that achived success in their carrears. In addition, the site will count on a quiz section where you will be able to measure your knowledge on this topic.",
+        "description": "Architecture related quiz website where to measure you knowledge. Also works as a compilation of information related to reknown architectes that achived success in their carrears.",
         "tags": ["React", "Redux", "SCSS", "Node", "Express", "MongoDB"],
         "links": {
-            "github": "https://github.com/raiesbo/architectureIcons"
+            "github": "https://github.com/raiesbo/architectureIcons",
+            "website": "https://architectureicons.com/"
         },
         "date": "2021 - in progress"
+    },
+    {
+        "title": "dailyTasks",
+        "description": "Weekly calendar where to place all day tasks with automated mechanisms so that unfinished tasks pass to the next day. With Login system and database.",
+        "tags": ["React", "Redux", "CSS", "Node", "Express", "MongoDB"],
+        "links": {
+            "github": "https://github.com/raiesbo/dailiyTask"
+        },
+        "date": "2021 - in progress"
+    },
+    {
+        "title": "Marte",
+        "description": "Website prototype that contains information about the planet Mars from various points of view: NASA, literature and film projects (Academic project).",
+        "tags": ["HTML", "CSS"],
+        "links": {
+            "github": "https://github.com/raiesbo/HTMLyCSS_PEC3",
+            "website": "https://raiesbo.github.io/HTMLyCSS_PEC3/"
+        },
+        "date": "2021"
     }
 ]
 
